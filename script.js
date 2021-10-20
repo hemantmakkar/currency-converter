@@ -33,8 +33,8 @@ emailBtn.addEventListener("click", e=> {
     // sendMail();
 })
 
-// setInterval(getExchangeRate, 5*60*1000);
-// setInterval(sendMail, 60*60*1000);
+setInterval(getExchangeRate, 5*60*1000);
+setInterval(sendMail, 60*60*1000);
 
 function getExchangeRate(){
     const amount = document.querySelector("form input");
