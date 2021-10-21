@@ -1,4 +1,4 @@
-const getButton = document.querySelector("form button");
+const getButton = document.querySelector(".exchange-btn");
 const entryBlock = document.querySelector(".entries");
 const emailField = document.querySelector(".email-input");
 const emailBtn = document.querySelector(".email-submit");
@@ -37,8 +37,8 @@ setInterval(getExchangeRate, 5*60*1000);
 setInterval(sendMail, 60*60*1000);
 
 function getExchangeRate(){
-    const amount = document.querySelector("form input");
-    const exchangeRateTxt = document.querySelector("form .exchange-rate");
+    const amount = document.querySelector(".form input");
+    const exchangeRateTxt = document.querySelector(".form .exchange-rate p");
     let amountVal = amount.value;
 
     if(amountVal == "" || amountVal == "0"){
