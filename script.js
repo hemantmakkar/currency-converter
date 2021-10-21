@@ -57,7 +57,7 @@ function getExchangeRate(){
         let exchangeRate = result.conversion_rates['INR'];
         let totalExRate = (amountVal * exchangeRate).toFixed(2);
         exchangeRateTxt.innerText = `${amountVal} USD = ${totalExRate} INR`;
-        entries.push({timestamp: `${Math.round(new Date().getTime()/1000)}`,
+        entries.push({timestamp: `${getDateStringServ()}`,
          entry: `${amountVal} USD = ${totalExRate} INR`});
         updateEntries();
         // console.log(entries)
@@ -105,7 +105,22 @@ function sendMail() {
     }); 
 }
 
+const getDateStringServ = () => {
 
+  const plus0 = num => `0${num.toString()}`.slice(-2)
+
+  const d = new Date()
+
+  const year = d.getFullYear()
+  const monthTmp = d.getMonth() + 1
+  const month = plus0(monthTmp)
+  const date = plus0(d.getDate())
+  const hour = plus0(d.getHours())
+  const minute = plus0(d.getMinutes())
+  const second = plus0(d.getSeconds())
+
+  return `${year}-${month}-${date} ${hour}:${minute}:${second}`
+}
 
 
 
