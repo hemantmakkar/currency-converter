@@ -10,7 +10,10 @@ function updateEntries() {
     var max = Math.max(0, entries.length-10);
     var str = '<h1>Entries</h1>';
     for(var i=max ; i<entries.length ; i++) {
-        str += `<span class='entry'>${entries[i]}</span>`;
+        str += `<div class='entry'>`
+        str += `<span>${entries[i].timestamp}</span>`;
+        str += `<span>${entries[i].entry}</span>`;
+        str += `</div>`
     }
     entryBlock.innerHTML = str;
 }
@@ -54,7 +57,8 @@ function getExchangeRate(){
         let exchangeRate = result.conversion_rates['INR'];
         let totalExRate = (amountVal * exchangeRate).toFixed(2);
         exchangeRateTxt.innerText = `${amountVal} USD = ${totalExRate} INR`;
-        entries.push(`${amountVal} USD = ${totalExRate} INR`);
+        entries.push({timestamp: `${Math.round(new Date().getTime()/1000)}`,
+         entry: `${amountVal} USD = ${totalExRate} INR`});
         updateEntries();
         // console.log(entries)
     }).catch((err) =>{
