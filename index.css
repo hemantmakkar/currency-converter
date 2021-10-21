@@ -43,7 +43,7 @@ body {
     /* background: slategrey; */
     box-shadow: 0 2rem 6rem rgb(0 0 0/25%);
     background: #55c57a;
-    border: 10px solid white;
+    border: 5px solid white;
 }
 
 .amount {
@@ -89,7 +89,7 @@ button:hover {
     border-radius: 40px;
     box-shadow: 0 2rem 6rem rgb(0 0 0 / 25%);
     background: #4fb4f7;
-    border: 10px solid white;
+    border: 5px solid white;
 }
 
 .entries h1 {
